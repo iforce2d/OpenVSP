@@ -66,6 +66,10 @@ IF( NOT VSP_NO_GRAPHICS )
 
   TARGET_LINK_LIBRARIES(vspviewer
     viewerscreens
+        Xrender
+        Xfixes
+        fontconfig
+        Xft
     ${FLTK_LIBRARIES}
     ${OPENGL_LIBRARIES}
   )

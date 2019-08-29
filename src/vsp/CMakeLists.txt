@@ -66,6 +66,11 @@ IF( NOT VSP_NO_GRAPHICS )
         Angelscript
         cartesian
         wavedragEL
+        Xrender
+        Xfixes
+        fontconfig
+        Xft
+        dl
 		${CPPTEST_LIBRARIES}
 		${LIBXML2_LIBRARIES}
 		${FLTK_LIBRARIES}
@@ -79,42 +84,44 @@ IF( NOT VSP_NO_GRAPHICS )
 
 	INSTALL( TARGETS vsp RUNTIME DESTINATION . )
 
-	ADD_EXECUTABLE(apitest_g
-	apitest_main.cpp
-	../geom_api/APITestSuite.cpp
-    ../geom_api/APITestSuiteMassProp.cpp
-    ../geom_api/APITestSuiteVSPAERO.cpp
-	../geom_api/APITestSuiteParasiteDrag.cpp
-	../vsp/main.h.in
-	)
+#	ADD_EXECUTABLE(apitest_g
+#	apitest_main.cpp
+#	../geom_api/APITestSuite.cpp
+#    ../geom_api/APITestSuiteMassProp.cpp
+#    ../geom_api/APITestSuiteVSPAERO.cpp
+#	../geom_api/APITestSuiteParasiteDrag.cpp
+#	../vsp/main.h.in
+#	)
 
-	set_target_properties( apitest_g PROPERTIES COMPILE_FLAGS "-DVSP_USE_FLTK=1")
+#	set_target_properties( apitest_g PROPERTIES COMPILE_FLAGS "-DVSP_USE_FLTK=1")
 
-	TARGET_LINK_LIBRARIES(apitest_g
-		geom_api_g
-		gui_interface_g
-		gui_and_draw
-		geom_core
-		cfd_mesh
-		triangle
-		util
-		tritri
-		clipper
-        Angelscript
-		screens
-		xmlvsp
-		sixseries
-		cartesian
-		wavedragEL
-		${CPPTEST_LIBRARIES}
-		${LIBXML2_LIBRARIES}
-		${FLTK_LIBRARIES}
-		${OPENGL_LIBRARIES}
-		${WINSOCK_LIBRARIES}
-		${CMINPACK_LIBRARIES}
-		${STEPCODE_LIBRARIES}
-		${LIBIGES_LIBRARIES}
-	)
+#	TARGET_LINK_LIBRARIES(apitest_g
+#		geom_api_g
+#		gui_interface_g
+#		gui_and_draw
+#		geom_core
+#		cfd_mesh
+#		triangle
+#		util
+#		tritri
+#		clipper
+#        Angelscript
+#		screens
+#		xmlvsp
+#		sixseries
+#		cartesian
+#		wavedragEL
+#		dl
+#		Xrender
+#		${CPPTEST_LIBRARIES}
+#		${LIBXML2_LIBRARIES}
+#		${FLTK_LIBRARIES}
+#		${OPENGL_LIBRARIES}
+#		${WINSOCK_LIBRARIES}
+#		${CMINPACK_LIBRARIES}
+#		${STEPCODE_LIBRARIES}
+#		${LIBIGES_LIBRARIES}
+#	)
 
 #	INSTALL( TARGETS apitest_g RUNTIME DESTINATION . )
 
