@@ -644,7 +644,11 @@ void Ca_X_Axis::draw_grid(){
     int grt;
     if((grt=grid_visible_ & CA_LABEL_GRID) && !(tick_index % label_step_)){
       fl_color(label_grid_color_);
-      fl_line_style(label_grid_style_,label_grid_width_);
+      fl_line_style(label_grid_style_,label_grid_width_);      
+      if ( tick_value == 0 ) {
+          fl_color( fl_rgb_color( 0, 0, 128 ) );
+          fl_line_style(label_grid_style_,2);
+      }
       if(grt==CA_LABEL_GRID){
         fl_begin_loop();
         fl_vertex(_pos,l1);
@@ -968,6 +972,10 @@ void Ca_Y_Axis::draw_grid(){
     if((grt=grid_visible_&CA_LABEL_GRID) && !(tick_index % label_step_)){
       fl_color(label_grid_color_);
       fl_line_style(label_grid_style_,label_grid_width_);
+      if ( tick_value == 0 ) {
+          fl_color( fl_rgb_color( 0, 0, 128 ) );
+          fl_line_style(label_grid_style_,2);
+      }
       if(grt==CA_LABEL_GRID){
         fl_begin_loop();
         fl_vertex(l1,_pos);
