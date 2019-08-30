@@ -661,7 +661,7 @@ Vsp_Canvas* GroupLayout::AddCanvas( int w, int h, double xmin, double xmax, doub
     yaxis->axis_align( CA_LEFT );
     m_Group->add( yaxis );      // this is needed for correct resize behavior
 
-    Ca_Y_Axis* y2axis = new Ca_Y_Axis( m_X + w - wyaxis, m_Y - margin, wyaxis, h + margin, ylabel );
+    /*Ca_Y_Axis* y2axis = new Ca_Y_Axis( m_X + w - wyaxis, m_Y - margin, wyaxis, h + margin, ylabel );
     y2axis->labelsize( 14 );
     y2axis->align( Fl_Align( FL_ALIGN_TOP ) );
     y2axis->minimum( ymin );
@@ -674,7 +674,7 @@ Vsp_Canvas* GroupLayout::AddCanvas( int w, int h, double xmin, double xmax, doub
     m_Group->add( y2axis );      // this is needed for correct resize behavior
 
     canvas->m_Ymain = yaxis;
-    canvas->m_Ysecondary = y2axis;
+    canvas->m_Ysecondary = y2axis;*/
     canvas->m_Wwide = w - wyaxis;
     canvas->m_Wnarrow = w - 2 * wyaxis;
 
