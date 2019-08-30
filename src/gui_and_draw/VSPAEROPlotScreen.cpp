@@ -553,7 +553,8 @@ void VSPAEROPlotScreen::SetDefaultView()
     switch ( VSPAEROMgr.m_AnalysisMethod.Get() )
     {
     case vsp::VORTEX_LATTICE:
-        m_LoadDistTab->show();
+        //m_LoadDistTab->show();
+        m_SweepTab->show();
         break;
     case vsp::PANEL:
         m_ConvergenceTab->show();
@@ -1576,7 +1577,8 @@ void VSPAEROPlotScreen::UpdateSweepXYDataBrowser()
     // restore original row selections
     for ( unsigned int iCase = 0; iCase < m_SweepXDataBrowser->size(); iCase++ )
     {
-        if( ( m_SelectDefaultData && strcmp( m_SweepXDataBrowser->text( iCase + 1 ), "CDtot" ) == 0 ) )
+        //if( ( m_SelectDefaultData && strcmp( m_SweepXDataBrowser->text( iCase + 1 ), "CDtot" ) == 0 ) )
+        if( ( m_SelectDefaultData && strcmp( m_SweepXDataBrowser->text( iCase + 1 ), "Alpha" ) == 0 ) )
         {
             m_SweepXDataBrowser->select( iCase + 1 ); //account for browser using 1-based indexing
         }
@@ -1590,7 +1592,8 @@ void VSPAEROPlotScreen::UpdateSweepXYDataBrowser()
     }
     for ( unsigned int iCase = 0; iCase < m_SweepYDataBrowser->size(); iCase++ )
     {
-        if( ( m_SelectDefaultData && strcmp( m_SweepYDataBrowser->text( iCase + 1 ), "CL" ) == 0 ) )
+        //if( ( m_SelectDefaultData && strcmp( m_SweepYDataBrowser->text( iCase + 1 ), "CL" ) == 0 ) )
+        if( ( m_SelectDefaultData && strcmp( m_SweepYDataBrowser->text( iCase + 1 ), "CMy" ) == 0 ) )
         {
             m_SweepYDataBrowser->select( iCase + 1 ); //account for browser using 1-based indexing
         }
